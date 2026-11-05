@@ -22,6 +22,7 @@ Thumbs.db
 !.env.example
 
 # Downloaded data, model weights, and experiment outputs
+/src/dataset/
 data/
 datasets/
 models/

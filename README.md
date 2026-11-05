@@ -6,7 +6,11 @@ We follow the general approach of An Inference Approach to Question Answering ov
 
 **Current status:** project scaffold only. The initial focus is data and graph exploration; no model-training or evaluation results have been produced in this repository.
 
-[Open experiment.ipynb in Google Colab](https://colab.research.google.com/github/ProIg-Chaa/inference-kgqa/blob/main/notebooks/experiment.ipynb)
+[Open experiment.ipynb in Google Colab](https://colab.research.google.com/github/ProIg-Chaa/inference-kgqa/blob/lesson02-student-start/notebooks/experiment.ipynb)
+
+## Lesson 02 student starting point
+
+`lesson02-student-start` contains the project scaffold and configuration only. The Lesson 02 data-loading, graph and path modules are for students to implement during class. Create your own working branch from this starting point, for example `git switch -c student-yourname`. Dataset files are stored locally and excluded from Git.
 
 ## Project Goals
 
@@ -38,6 +42,8 @@ inference-kgqa/
 
 Later we may add tests/, training scripts and model modules. Avoid committing datasets, checkpoints or local virtual environments.
 
+Local MetaQA text data is stored in `src/dataset/` (ignored by Git), with `kb.txt` and the original `1-hop/`, `2-hop/`, and `3-hop/` directories. The notebook defaults to this location. Downloads include vanilla/NTM text and question types; provenance and file hashes are in the local `download_manifest.json`. Obtain the files from the [official MetaQA source](https://github.com/yuyuz/MetaQA); a Git clone does not include them.
+
 ## Development Workflow
 
 GitHub: shared codebase, commits and code review.
@@ -55,7 +61,7 @@ The student should be able to explain each important function's inputs, outputs 
 ### Local development (Windows or macOS)
 
 ~~~bash
-git clone https://github.com/ProIg-Chaa/inference-kgqa.git
+git clone --branch lesson02-student-start https://github.com/ProIg-Chaa/inference-kgqa.git
 cd inference-kgqa
 python -m venv .venv
 ~~~
@@ -83,7 +89,7 @@ Stage 1-2 currently uses the Python standard library. Add model dependencies whe
 Open [notebooks/experiment.ipynb](notebooks/experiment.ipynb) in Colab. Run the following setup in a new cell before the notebook's configuration cells:
 
 ~~~python
-!git clone https://github.com/ProIg-Chaa/inference-kgqa.git
+!git clone --branch lesson02-student-start https://github.com/ProIg-Chaa/inference-kgqa.git
 %cd /content/inference-kgqa
 !pip install -r requirements.txt
 ~~~
