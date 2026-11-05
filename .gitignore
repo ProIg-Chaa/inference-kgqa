@@ -1,0 +1,45 @@
+# Python and notebook caches
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local environments and machine settings
+.venv/
+venv/
+env/
+.mamba/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local credentials
+.env
+.env.*
+!.env.example
+
+# Downloaded data, model weights, and experiment outputs
+data/
+datasets/
+models/
+checkpoints/
+outputs/
+runs/
+logs/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+
+# Large intermediate files and archives
+*.npy
+*.npz
+*.pkl
+*.pickle
+*.zip
+*.tar
+*.tar.gz
+*.tgz

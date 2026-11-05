@@ -1,0 +1,4 @@
+# Stages 1-2 use the Python standard library only.
+# Add dependencies here when the corresponding implementation is introduced.
+# Local notebook support, if needed: python -m pip install ipykernel
+# PyTorch and model-training dependencies are not configured yet.
