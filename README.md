@@ -4,13 +4,13 @@ Reproduction project for COMP9444 Project 003: Knowledge Graph Question Answerin
 
 We follow the general approach of An Inference Approach to Question Answering over Knowledge Graphs (Gupta et al., 2021): represent KGQA as a natural language inference (NLI) task, using paths in a knowledge graph as evidence for candidate answers.
 
-**Current status:** project scaffold only. The initial focus is data and graph exploration; no model-training or evaluation results have been produced in this repository.
+**Current branch:** `lesson02-teacher-rehearsal`, a teacher reference for data loading, relation-preserving graphs and bounded paths. Read the [teacher rehearsal guide](lessons/lesson02_teacher_guide.md), or run `python -s -X utf8 scripts/rehearse_lesson02.py`. This is Lesson 02 teaching code; no neural model training or QA-model evaluation has been completed.
 
-[Open experiment.ipynb in Google Colab](https://colab.research.google.com/github/ProIg-Chaa/inference-kgqa/blob/lesson02-student-start/notebooks/experiment.ipynb)
+[Open the teacher rehearsal in Google Colab](https://colab.research.google.com/github/ProIg-Chaa/inference-kgqa/blob/lesson02-teacher-rehearsal/notebooks/lesson02_teacher_rehearsal.ipynb)
 
-## Lesson 02 student starting point
+## Lesson 02 branch roles
 
-`lesson02-student-start` contains the project scaffold and configuration only. The Lesson 02 data-loading, graph and path modules are for students to implement during class. Create your own working branch from this starting point, for example `git switch -c student-yourname`. Dataset files are stored locally and excluded from Git.
+This teacher branch contains reference modules, a step-by-step notebook and small tests. `lesson02-student-start` contains scaffold and configuration only; students create their own branches there and implement the lesson modules themselves. Dataset files are stored locally and excluded from Git. Branches do not restrict who can read the reference code.
 
 ## Project Goals
 
@@ -61,7 +61,7 @@ The student should be able to explain each important function's inputs, outputs 
 ### Local development (Windows or macOS)
 
 ~~~bash
-git clone --branch lesson02-student-start https://github.com/ProIg-Chaa/inference-kgqa.git
+git clone --branch lesson02-teacher-rehearsal https://github.com/ProIg-Chaa/inference-kgqa.git
 cd inference-kgqa
 python -m venv .venv
 ~~~
@@ -89,7 +89,7 @@ Stage 1-2 currently uses the Python standard library. Add model dependencies whe
 Open [notebooks/experiment.ipynb](notebooks/experiment.ipynb) in Colab. Run the following setup in a new cell before the notebook's configuration cells:
 
 ~~~python
-!git clone --branch lesson02-student-start https://github.com/ProIg-Chaa/inference-kgqa.git
+!git clone --branch lesson02-teacher-rehearsal https://github.com/ProIg-Chaa/inference-kgqa.git
 %cd /content/inference-kgqa
 !pip install -r requirements.txt
 ~~~
