@@ -23,6 +23,7 @@ Thumbs.db
 
 # Downloaded data, model weights, and experiment outputs
 /src/dataset/
+/third_party/ESIM/
 data/
 datasets/
 models/

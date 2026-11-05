@@ -1,0 +1,22 @@
+{
+  "data_dir": "data/processed/metaqa_2hop_debug",
+  "output_dir": "outputs/esim_debug",
+  "device": "cpu",
+  "seed": 17,
+  "num_threads": 2,
+  "embedding_dim": 64,
+  "hidden_size": 32,
+  "dropout": 0.2,
+  "embedding_mode": "random_trainable_debug",
+  "num_classes": 2,
+  "epochs": 1,
+  "batch_size": 32,
+  "learning_rate": 0.001,
+  "max_gradient_norm": 10.0,
+  "class_weights": "balanced_train_only",
+  "entailment_threshold": 0.5,
+  "max_premise_tokens": 640,
+  "max_hypothesis_tokens": 128,
+  "train_question_limit": null,
+  "dev_question_limit": null
+}

@@ -4,7 +4,7 @@ Reproduction project for COMP9444 Project 003: Knowledge Graph Question Answerin
 
 We follow the general approach of An Inference Approach to Question Answering over Knowledge Graphs (Gupta et al., 2021): represent KGQA as a natural language inference (NLI) task, using paths in a knowledge graph as evidence for candidate answers.
 
-**Current branch:** `lesson02-teacher-rehearsal`, a teacher reference for data loading, relation-preserving graphs and bounded paths. Read the [teacher rehearsal guide](lessons/lesson02_teacher_guide.md), or run `python -s -X utf8 scripts/rehearse_lesson02.py`. This is Lesson 02 teaching code; no neural model training or QA-model evaluation has been completed.
+**Current branch:** `lesson02-teacher-rehearsal`, a teacher reference for data/graph/PHL and training the pinned [coetaur0/ESIM](https://github.com/coetaur0/ESIM). A CPU debug run now trains the complete upstream sequential model on the 500-question Train PHL subset and evaluates the independent 100-question Dev subset. Random embeddings/small dimensions are debug adaptations, not a full Inference-paper reproduction. Read the [ESIM training guide](lessons/esim_training_guide.md).
 
 [Open the teacher rehearsal in Google Colab](https://colab.research.google.com/github/ProIg-Chaa/inference-kgqa/blob/lesson02-teacher-rehearsal/notebooks/lesson02_teacher_rehearsal.ipynb)
 
@@ -126,7 +126,29 @@ Compare against reported reference results with matched protocols where possible
 
 Implement HRPE or another justified improvement
 
-Current focus: Stage 1–2. No model training is required for the second lesson.
+Current focus: validated PHL debug data and upstream sequential-ESIM training/Dev evaluation. Pretrained TransE/GloVe alignment, full-size experiments and HRPE remain next.
+
+## Model training: coetaur0/ESIM
+
+```powershell
+python -s -X utf8 scripts/setup_esim.py
+python -s -X utf8 scripts/train_esim.py --smoke
+python -s -X utf8 scripts/train_esim.py
+```
+
+Use an isolated PyTorch environment. The upstream core is pinned in `third_party/esim.lock.json`, fetched into the ignored `third_party/ESIM/` checkout, and imported without model-file changes. Our JSONL loader, binary-label setting, training loop and answer-set evaluator are separate. Edit `configs/esim_debug.json` for experiment settings. Outputs/checkpoints are ignored under `outputs/`; see the [training and checkpoint evaluation guide](lessons/esim_training_guide.md).
+
+## PHL debug corpus (teacher reference)
+
+Run from this repository with the Python standard library; no packages are installed:
+
+```powershell
+python -s -X utf8 scripts/build_phl.py
+```
+
+The editable [configuration](configs/phl_debug.json) selects the first 500 official Train questions and 100 Dev questions. Outputs are local and Git-ignored under `data/processed/metaqa_2hop_debug/`: `train.jsonl`, `dev.jsonl`, original-question metadata, a Train-only vocabulary, previews, an example batch and validation/provenance reports. A completed run is protected; use a different `--output` or explicitly pass `--overwrite` to regenerate it.
+
+Use `premise` and `hypothesis` as model inputs and `label` as the target: 0 supports, 1 is not a recorded answer. Answers live in the question sidecars for supervision/QA evaluation and must not be fed into the NLI model. Read the [PHL guide](lessons/phl_debug_guide.md) for the candidate/evidence protocol and remaining reproduction boundaries.
 
 ## References
 

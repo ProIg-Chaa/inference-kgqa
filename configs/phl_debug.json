@@ -1,0 +1,25 @@
+{
+  "dataset_dir": "src/dataset",
+  "output_dir": "data/processed/metaqa_2hop_debug",
+  "question_limits": {"train": 500, "dev": 100},
+  "max_hops": 2,
+  "candidate_hops": 2,
+  "candidate_first_hop_relations": ["directed_by", "written_by", "starred_actors"],
+  "negative_per_positive": null,
+  "max_paths_per_candidate": null,
+  "seed": 7,
+  "labels": {"entailment": 0, "not_answer": 1},
+  "batch_max_premise_tokens": 512,
+  "batch_max_hypothesis_tokens": 128,
+  "relation_templates": {
+    "directed_by": "{head} is directed by {tail}.",
+    "written_by": "{head} is written by {tail}.",
+    "starred_actors": "{head} stars {tail}.",
+    "release_year": "{head} was released in {tail}.",
+    "in_language": "{head} is in {tail}.",
+    "has_tags": "{head} has the tag {tail}.",
+    "has_genre": "{head} has the genre {tail}.",
+    "has_imdb_votes": "{head} has IMDb votes value {tail}.",
+    "has_imdb_rating": "{head} has IMDb rating value {tail}."
+  }
+}

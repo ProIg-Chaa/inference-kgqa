@@ -1,0 +1,10 @@
+{
+  "repository": "https://github.com/coetaur0/ESIM.git",
+  "commit": "65611601ff9f17f76e1f246e8e46b5fc4bee13fc",
+  "directory": "third_party/ESIM",
+  "license": "Apache-2.0",
+  "implementation": "Enhanced Sequential Inference Model; coetaur0 PyTorch implementation",
+  "sparse_paths": ["esim", "scripts", "config"],
+  "local_model_modifications": [],
+  "adaptation": "Import upstream esim.model.ESIM unchanged; project-owned PHL loader, binary classifier setting and QA evaluator."
+}

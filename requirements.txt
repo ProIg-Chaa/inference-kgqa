@@ -1,4 +1,4 @@
-# Stages 1-2 use the Python standard library only.
-# Add dependencies here when the corresponding implementation is introduced.
-# Local notebook support, if needed: python -m pip install ipykernel
-# PyTorch and model-training dependencies are not configured yet.
+# Data/PHL processing uses the standard library. The pinned ESIM core needs torch.
+# Reuse the existing isolated environment; exact runtime is recorded per run.
+# Choose a CPU/CUDA wheel appropriate to the machine when installing elsewhere.
+torch
